@@ -1,0 +1,15 @@
+
+    <header>
+        <app-header></app-header>
+    </header>
+
+      <div [ngClass]="nav ? 'navTrue':'navFalse'" style="background-image: url('../../../assets/images/dashboard.png');background-size: cover;height:80vh;width: 100vw;">
+        <app-sidenav style="margin-top: 15vh;" *ngIf="nav"></app-sidenav>
+      </div>
+    
+    <footer>
+        <app-footer></app-footer>
+    </footer>
+    
+
+

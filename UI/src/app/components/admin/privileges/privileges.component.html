@@ -1,0 +1,24 @@
+
+<h1 style="color: #1aa1a1;">Managing Privileges</h1>
+
+<table class="table table-hover" style="min-height: 70vh;min-width: 50vw;max-width: 70vw;">
+    <thead>
+      <tr>
+        <th scope="col">S.no</th>
+        <th scope="col">Project Name</th>
+        <th scope="col">Team Members(Max 5)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of privilegesList">
+        <th scope="row">{{i.id}}</th>
+        <td>{{i.projectName}}</td>
+        <td >
+            <ul *ngFor="let j of i.projectTeam">
+                <li style="display: flex;justify-content: space-between;align-items: center;width: 10vw;">{{j}}<fa-icon [icon]="remove"></fa-icon></li>
+            </ul>
+            <fa-icon [icon]="add" *ngIf="i.projectTeam.length < 5"></fa-icon>
+        </td>
+      </tr>
+    </tbody>
+  </table>
