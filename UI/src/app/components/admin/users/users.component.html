@@ -1,0 +1,33 @@
+<h1 style="color: #1aa1a1;">Managing Users</h1>
+
+<button class="btn btn-success" (click)="formShow = !formShow">{{ !formShow ? 'Add User' : 'Close'}}</button>
+<app-add-user *ngIf="formShow"></app-add-user>
+
+<table class="table table-hover" style="min-height: 70vh;min-width: 70vw;">
+    <thead>
+      <tr>
+        <th scope="col">S.no</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of usersList">
+        <th scope="row">{{i.id}}</th>
+        <td>{{i.Name}}</td>
+        <td>{{i.Email}}</td>
+        <td>{{i.Password}}</td>
+        <th scope="col" >
+            <fa-icon [icon]="edit" (click)="editMode(i)"></fa-icon>
+        </th>
+        <th scope="col" >
+            <fa-icon [icon]="delete"></fa-icon>
+        </th>
+      </tr>
+      <span *ngFor="let n of numSequence(5);
+           let i = index;">{{i}} </span>
+    </tbody>
+  </table>

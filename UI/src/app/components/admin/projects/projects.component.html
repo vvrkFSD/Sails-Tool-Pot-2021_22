@@ -1,0 +1,29 @@
+<h1 style="color: #1aa1a1;">Managing Projects</h1>
+
+<button class="btn btn-success" (click)="formShow = !formShow">{{ !formShow ? 'Add Project' : 'Close'}}</button>
+<app-add-project *ngIf="formShow"></app-add-project>
+
+<table class="table table-hover" style="min-height: 70vh;min-width: 70vw;">
+    <thead>
+      <tr>
+        <th scope="col">S.no</th>
+        <th scope="col">Project Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of projectsList">
+        <th scope="row">{{i.id}}</th>
+        <td>{{i.projectName}}</td>
+        <td>{{i.description}}</td>
+        <th scope="col" >
+            <fa-icon [icon]="edit" (click)="editMode(i)"></fa-icon>
+        </th>
+        <th scope="col" >
+            <fa-icon [icon]="delete"></fa-icon>
+        </th>
+      </tr>
+    </tbody>
+  </table>
