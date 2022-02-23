@@ -1,4 +1,4 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
   selector: '[appTable]'
@@ -6,7 +6,8 @@ import { Directive, ElementRef } from '@angular/core';
 export class TableDirective {
 
   constructor(private el: ElementRef) {
-    this.el.nativeElement.style.backgroundColor = 'gray';
+    // console.log("directives",this.el.nativeElement)
+    this.el.nativeElement.style.backgroundColor = 'yellow';
    }
 
 }

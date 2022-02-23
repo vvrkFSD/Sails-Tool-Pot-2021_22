@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  // display of user Home
+  display = true;
+
+  constructor(private route: Router,
+              private router: ActivatedRoute) { }
 
   ngOnInit(): void {
+  }
+
+  openProjects(){
+    this.route.navigate(['/project']);
+    this.display = false;
   }
 
 }

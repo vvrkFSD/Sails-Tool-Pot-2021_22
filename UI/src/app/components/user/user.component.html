@@ -1,11 +1,12 @@
-<div style="display: flex;flex-direction: column;">
-    <app-header style="margin-bottom: 5vh;"></app-header>
-
-    <p>user works!</p>
-    <router-outlet></router-outlet>
-
-    <app-footer></app-footer>
+<div style="max-width: 50vw;border-radius: 20px;margin-top: 10px;" (click)="openProjects()">
+    <img src="../../../assets/images/user-projects.png" style="height: 20vh;width: 50vw;" alt="project-dp" />
+    <div>
+        <h3>Projects</h3>
+        <p>projects you are currently working in</p>
+    </div>
 </div>
+<router-outlet></router-outlet>
 
 
+    
 

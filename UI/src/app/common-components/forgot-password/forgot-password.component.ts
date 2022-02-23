@@ -16,11 +16,6 @@ export class ForgotPasswordComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.generatePswd = new FormGroup({
-      'email': new FormControl(null, [Validators.required, Validators.email]),
-      'password': new FormControl('', [Validators.required ,Validators.minLength(8)]),
-      're-password': new FormControl(null, [Validators.required]),
-    })
   }
 
   onChangePassword(){

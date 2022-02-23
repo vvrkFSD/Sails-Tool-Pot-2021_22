@@ -12,8 +12,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { AccountComponent } from './components/profile/account/account.component';
 import { ChangePasswordComponent } from './components/profile/change-password/change-password.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ProjectToolsComponent } from './components/user/user-project/project-tools/project-tools.component';
+import { UserProjectComponent } from './components/user/user-project/user-project.component';
 import { UserComponent } from './components/user/user.component';
-import { UserProjectsComponent } from './components/user/user-projects/user-projects.component';
+// import { UserComponent } from './components/user/user.component';
+// import { UserProjectsComponent } from './components/user/user-projects/user-projects.component';
 
 
 const routes: Routes = [
@@ -23,7 +26,6 @@ const routes: Routes = [
   {path: "profile", component: ProfileComponent, children: [
     {path: "account", component: AccountComponent},
     {path: "change-password", component: ChangePasswordComponent},
-
   ]},
   {path: 'admin', component: AdminComponent, children: [
     {path: "projects", component: ProjectsComponent},
@@ -31,11 +33,11 @@ const routes: Routes = [
     {path: "tools", component: ToolsComponent},
     {path: "privileges", component: PrivilegesComponent},
   ]},
-  {path: 'projectsList', component: UserComponent, children: [
-    {path: ':pid', component: UserProjectsComponent, children: [
-      {path: ":tid", component: ToolsComponent}
-    ] }
+  {path: '', component: UserComponent},
+  {path: "project", component: UserProjectComponent, children: [
+  {path: "tool", component: ProjectToolsComponent}
   ]},
+  
   {path: 'not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/not-found'}
 ];

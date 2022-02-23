@@ -1,18 +1,24 @@
 
-    <header >
-        <app-header (click)="onc()"></app-header>
-    </header>
+    
 
-    <div [ngClass]="nav ? 'navTrue':'navFalse'">
-      <app-sidenav style="margin-top: 15vh;" *ngIf="nav"></app-sidenav>
-      <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin: 20vh;">
-         <router-outlet></router-outlet>
+    
+
+    <div style="display: flex;">
+      <app-sidenav *ngIf="nav"></app-sidenav>
+      <div style="display: flex;flex-direction: column;">
+        <header >
+            <app-header [nav]="nav" (click)="onc()"></app-header>
+        </header> 
+        <div style="padding: 20px;">
+            <router-outlet loading="true"></router-outlet>
+        </div>
+        <footer>
+            <app-footer></app-footer>
+        </footer>
       </div>
     </div>
     
-    <footer>
-        <app-footer></app-footer>
-    </footer>
+    
     
 
 

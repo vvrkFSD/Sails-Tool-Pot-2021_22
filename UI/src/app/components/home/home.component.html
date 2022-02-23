@@ -1,15 +1,21 @@
 
-    <header>
-        <app-header></app-header>
-    </header>
 
-      <div [ngClass]="nav ? 'navTrue':'navFalse'" style="background-image: url('../../../assets/images/dashboard.png');background-size: cover;height:80vh;width: 100vw;">
-        <app-sidenav style="margin-top: 15vh;" *ngIf="nav"></app-sidenav>
+<div style="display: flex;" >
+
+  <app-sidenav *ngIf="nav" ></app-sidenav>
+
+  <div>
+      <app-header [nav]="nav" ></app-header>
+      <div  style="display: flex;flex-direction: column;justify-content: center;align-items: center;min-height: 85vh;min-width: 100vw">
+        <app-prompt-box
+          *ngIf="prompt"
+          (close)="onHandleError()"
+          ></app-prompt-box>
+        <app-user *ngIf="!admin" style="display: flex;"></app-user>
       </div>
-    
-    <footer>
+      <footer>
         <app-footer></app-footer>
-    </footer>
-    
+      </footer>
+  </div>
 
-
+</div>

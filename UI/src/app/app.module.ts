@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import * as $ from "jquery";
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
+import { DataTablesModule } from 'angular-datatables';
+
+import {HttpClientModule} from '@angular/common/http'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,12 +26,17 @@ import { PrivilegesComponent } from './components/admin/privileges/privileges.co
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { UserComponent } from './components/user/user.component';
-import { UserProjectsComponent } from './components/user/user-projects/user-projects.component';
-import { ProjectToolsComponent } from './components/user/user-projects/project-tools/project-tools.component';
+// import { UserComponent } from './components/user/user.component';
+// import { UserProjectsComponent } from './components/user/user-projects/user-projects.component';
+// import { ProjectToolsComponent } from './components/user/user-projects/project-tools/project-tools.component';
 import { TableDirective } from './directives/table.directive';
-import { AddUserComponent } from './components/admin/users/add-user/add-user.component';
-import { AddProjectComponent } from './components/admin/projects/add-project/add-project.component';
+// import { AddUserComponent } from './components/admin/users/add-user/add-user.component';
+// import { AddProjectComponent } from './components/admin/projects/add-project/add-project.component';
+import { PromptBoxComponent } from './shared/prompt-box/prompt-box.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { UserComponent } from './components/user/user.component';
+import { UserProjectComponent } from './components/user/user-project/user-project.component';
+import { ProjectToolsComponent } from './components/user/user-project/project-tools/project-tools.component';
 
 @NgModule({
   declarations: [
@@ -46,18 +56,20 @@ import { AddProjectComponent } from './components/admin/projects/add-project/add
     SidenavComponent,
     HomeComponent,
     PageNotFoundComponent,
-    UserComponent,
-    UserProjectsComponent,
-    ProjectToolsComponent,
     TableDirective,
-    AddUserComponent,
-    AddProjectComponent,
+    PromptBoxComponent,
+    LoadingSpinnerComponent,
+    UserComponent,
+    UserProjectComponent,
+    ProjectToolsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

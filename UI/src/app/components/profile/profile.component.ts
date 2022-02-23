@@ -3,6 +3,7 @@ import { WholeServiceService } from '../whole-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { IsAdminService } from 'src/app/services/is-admin.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,6 +11,8 @@ import { faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit, DoCheck{
+  admin = this.isAdmin.admin;
+
   nav = false;
   showAcc = false;
   showCP = false;
@@ -17,7 +20,10 @@ export class ProfileComponent implements OnInit, DoCheck{
   right = faAngleRight;
   down = faAngleDown;
 
-  constructor(private service: WholeServiceService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private service: WholeServiceService, 
+              private router: Router, 
+              private route: ActivatedRoute,
+              private isAdmin: IsAdminService) { }
 
   ngOnInit(): void {
     this.nav = this.service.sideNav;

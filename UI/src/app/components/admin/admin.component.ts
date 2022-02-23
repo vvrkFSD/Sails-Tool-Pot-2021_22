@@ -8,6 +8,7 @@ import { WholeServiceService } from '../whole-service.service';
 })
 export class AdminComponent implements OnInit, OnChanges {
   nav = false
+  loading = true;
 
   constructor(private service: WholeServiceService) { }
 

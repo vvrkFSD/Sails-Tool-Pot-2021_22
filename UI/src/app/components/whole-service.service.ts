@@ -9,7 +9,8 @@ import { faHome,
     faPen,
     faTrash,
     faMinusCircle,
-    faUserPlus
+    faUserPlus,
+    faCheckCircle
  } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -18,6 +19,8 @@ import { faHome,
 })
 export class WholeServiceService {
   sideNav = false
+
+  newUser = true;
 
   colors = {
     blue: '#1AA1A1',
@@ -34,7 +37,8 @@ export class WholeServiceService {
     Edit: faPen,
     Delete: faTrash,
     removeUser: faMinusCircle,
-    addUser: faUserPlus
+    addUser: faUserPlus,
+    success: faCheckCircle
   }
 
   usersList = [
@@ -111,6 +115,31 @@ export class WholeServiceService {
       id: 1,
       projectName: 'project1',
       description: 'sails tool pot',
+    },
+    {
+      id: 2,
+      projectName: 'project2',
+      description: 'sails tool pot1',
+    },
+    {
+      id: 3,
+      projectName: 'project3',
+      description: 'sails tool pot2',
+    },
+    {
+      id: 4,
+      projectName: 'project4',
+      description: 'sails tool pot3',
+    },
+    {
+      id: 5,
+      projectName: 'project5',
+      description: 'sails tool pot4',
+    },
+    {
+      id: 6,
+      projectName: 'project6',
+      description: 'sails tool pot5',
     },
     {
       id: 2,

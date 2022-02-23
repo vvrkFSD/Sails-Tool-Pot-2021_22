@@ -2,13 +2,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 100vw;
+    width: 100vw;
     padding-left: 10px;
     padding-right: 10px;
     background-color: black;
 }
 
-@media (min-width: 425px) and (max-width: 768px){
+.header-side-nav{
+    display: flex;
+    width: 88vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: black;
+}
+
+@media (min-width: 320px) and (max-width: 768px){
     .laptopView{
         display: none;
     }
