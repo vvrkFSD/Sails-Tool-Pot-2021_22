@@ -9,6 +9,7 @@ import { ToolsComponent } from './admin-components/tools/tools.component';
 
 import { UserComponent } from './components/user/user.component';
 import { UsersComponent } from './admin-components/users/users.component';
+import { UsertoolComponent } from './components/usertool/usertool.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
   { path: 'tools', component: ToolsComponent },
   { path: 'users', component: UsersComponent },
+  { path: 'usertool', component: UsertoolComponent },
 ];
 
 @NgModule({

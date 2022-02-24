@@ -13,6 +13,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { ProjectsComponent } from './admin-components/projects/projects.component';
 import { ToolsComponent } from './admin-components/tools/tools.component';
 import { UsersComponent } from './admin-components/users/users.component';
+import { UsertoolComponent } from './components/usertool/usertool.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { UsersComponent } from './admin-components/users/users.component';
     ProjectsComponent,
     ToolsComponent,
     UsersComponent,
+    UsertoolComponent,
   ],
   imports: [
     BrowserModule,
