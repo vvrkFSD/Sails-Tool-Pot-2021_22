@@ -6,3 +6,15 @@
     display: flex;
     justify-content: center;
 }
+
+@media screen and (min-width: 800px) {
+    .sideN{
+        min-width: 12vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .sideN{
+        min-width: 18vw;
+    }
+}

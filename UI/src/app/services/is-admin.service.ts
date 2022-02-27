@@ -7,5 +7,5 @@ export class IsAdminService {
 
   constructor() { }
 
-  admin = false;
+  admin = true;
 }

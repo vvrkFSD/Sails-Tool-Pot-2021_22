@@ -18,14 +18,10 @@ export class AdminComponent implements OnInit, OnChanges {
 
   ngOnChanges(){
     this.nav = this.service.sideNav
-    console.log("parent triggered")
-
   }
 
   onc(){
-    // console.log("not changed", this.service.sideNav)
     this.nav = this.service.sideNav
-    // console.log("changed", this.service.sideNav)
   }
 
 }

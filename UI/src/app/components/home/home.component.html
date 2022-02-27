@@ -2,11 +2,11 @@
 
 <div style="display: flex;" >
 
-  <app-sidenav *ngIf="nav" ></app-sidenav>
+  <app-sidenav *ngIf="nav" class="sideN" ></app-sidenav>
 
   <div>
       <app-header [nav]="nav" ></app-header>
-      <div  style="display: flex;flex-direction: column;justify-content: center;align-items: center;min-height: 85vh;min-width: 100vw">
+      <div  style="display: flex;flex-direction: column;justify-content: center;align-items: center;min-height: 85vh;min-width: 85vw">
         <app-prompt-box
           *ngIf="prompt"
           (close)="onHandleError()"

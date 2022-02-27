@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './common-components/login/login.component';
 import { ForgotPasswordComponent } from './common-components/forgot-password/forgot-password.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChangePasswordComponent } from './components/profile/change-password/change-password.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AccountComponent } from './components/profile/account/account.component';
@@ -66,6 +66,7 @@ import { ProjectToolsComponent } from './components/user/user-project/project-to
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
     HttpClientModule,

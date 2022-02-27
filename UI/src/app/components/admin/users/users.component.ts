@@ -9,18 +9,20 @@ import { WholeServiceService } from '../../whole-service.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+  // error msg while adding the user
   msg: null | undefined | string;
 
+  // reactive add user form
   addUser = new FormGroup({
     Name: new FormControl('',[Validators.required]),
     Email: new FormControl('',[Validators.required, Validators.email]),
     Password: new FormControl('sails@123',[Validators.required])
   })
 
-
+  // loading view
   loading = true;
 
-
+  // error handling
   errorMsg = null;
   s:any = null;
   edi=false;
@@ -36,40 +38,37 @@ export class UsersComponent implements OnInit {
   delete = this.service.icons.Delete;
   success = this.service.icons.success;
 
+  // users list
   usersList:any = [];
 
   constructor(private service: WholeServiceService,
               private httpService: AdminUserDataService) { }
 
   ngOnInit(): void {
-    // table design
+    this.tableDesign();
+    this.fetchUsers();
+  }
+
+  // table design
+  tableDesign(){
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 5,
       processing: true
     }
-
-    //get user details
-    this.httpService.getUsersData()
-    .subscribe(data=>{
-      this.loading = false;
-      this.usersList = data
-    },error=>{
-      this.loading = false;
-      this.errorMsg = error.statusText
-    })
   }
 
+  // show add user form
   showForm(){
     this.formShow = !this.formShow;
     this.edi = false;
     this.addUser.reset();
-    console.log(this.formShow)
+    this.errorMsg = null;
   }
 
+  // add user details
   addUserDetails(){
     if(this.edi){
-      console.log("id",this.s)
       this.httpService.updateUserData(this.s, this.addUser.value)
       .subscribe(success=>{
         console.log("update user", success)
@@ -78,9 +77,9 @@ export class UsersComponent implements OnInit {
         this.errorMsg = error
       })
       this.addUser.reset();
+      this.msg = null;
 
     }else{
-      // console.log("details", this.addUser.value, this.addUser.value.Name);
     this.httpService.postUserData(this.addUser.value)
     .subscribe(success=>{
       console.log("post success", success);
@@ -90,9 +89,11 @@ export class UsersComponent implements OnInit {
       this.msg = error.statusText
     })
     this.addUser.reset();
+    this.msg = null;
   }
   }
 
+  // get users data
   fetchUsers(){
     this.loading = true;
 
@@ -100,33 +101,28 @@ export class UsersComponent implements OnInit {
     .subscribe(data=>{
       this.loading = false;
       this.usersList = data
-      console.log("data",this.usersList)
     },error=>{
       this.loading = false;
       this.errorMsg = error.statusText
     })
   }
 
+  // edit user data
   editMode(i: any){
-    console.log("edit added", i,this.edi)
-    // if(this.edi){
-      this.s = i.id
-      console.log("id added", this.s, i)
-    // }
+    this.s = i.id
+    this.formShow = true;
+    const data = {
+      Name: i.Name,
+      Email: i.Email,
+      Password: i.Password
+    }
     
-      this.formShow = true;
-      this.addUser.patchValue({
-        Name: i.Name,
-        Email: i.Email,
-        Password: i.Password
-      })
-     this.edi = true;
-
+    this.addUser.patchValue(data)
+    this.edi = true;
   }
 
-
+  // delete user
   deleteUser(i: any){
-    console.log("user",i)
     this.httpService.deleteUserData(i.id)
     .subscribe(success=>{
       this.delSuccess = true;
@@ -135,7 +131,6 @@ export class UsersComponent implements OnInit {
       this.delSuccess = false;
     });
 
-    this.fetchUsers()
   }
 
 }

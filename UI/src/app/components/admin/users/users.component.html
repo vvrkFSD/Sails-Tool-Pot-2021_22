@@ -6,7 +6,7 @@
 
 <div style="align-self: flex-end;">
   <div style="display: flex;flex-direction: column;">
-    <button class="btn btn-success" (click)="showForm()">{{ !formShow ? 'Add User' : 'Close'}}</button>
+    <button class="btn" style="background-color: #1aa1a1;color: white;" (click)="showForm()">{{ !formShow ? 'Add User' : 'Close'}}</button>
     <div *ngIf="formShow" style="align-self: flex-end;width: 100%;min-width: 20vw;">
       <div class="container">
         <div class="row">
@@ -57,7 +57,7 @@ style="min-height: 70vh;min-width: 70vw;border: 5px solid black;">
     <tbody>
       <tr *ngFor="let i of usersList">
         <td scope="row">
-           usersList.findIndex(i => i.Name == i.Name) 
+          {{usersList.indexOf(i)+1 }} 
         </td>
         <td scope="row">
             {{i.Name}}
