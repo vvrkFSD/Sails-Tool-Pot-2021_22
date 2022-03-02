@@ -14,6 +14,7 @@ import { ProjectsComponent } from './admin-components/projects/projects.componen
 import { ToolsComponent } from './admin-components/tools/tools.component';
 import { UsersComponent } from './admin-components/users/users.component';
 import { UsertoolComponent } from './components/usertool/usertool.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { UsertoolComponent } from './components/usertool/usertool.component';
     ReactiveFormsModule,
     FontAwesomeModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

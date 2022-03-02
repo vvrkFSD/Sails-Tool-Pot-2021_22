@@ -21,8 +21,12 @@ const routes: Routes = [
     component: AdminComponent,
     //children: [{ path: 'projects', component: ProjectComponent }],
   },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'tools', component: ToolsComponent },
+  {
+    path: 'projects',
+    component: ProjectsComponent,
+    children: [{ path: 'tools', component: ToolsComponent }],
+  },
+  // { path: 'tools', component: ToolsComponent },
   { path: 'users', component: UsersComponent },
   { path: 'usertool', component: UsertoolComponent },
 ];

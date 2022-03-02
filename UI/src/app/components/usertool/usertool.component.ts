@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-usertool',
   templateUrl: './usertool.component.html',
-  styleUrls: ['./usertool.component.scss']
+  styleUrls: ['./usertool.component.scss'],
 })
 export class UsertoolComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  goToLink(url: string) {
+    window.open('https://' + url, '_blank');
   }
-
 }

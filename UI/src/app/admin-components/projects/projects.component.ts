@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
   selector: 'app-projects',
@@ -14,9 +15,12 @@ export class ProjectsComponent implements OnInit {
     { name: 'youtube summarization', description: 'team4 project' },
   ];
   color: any;
-  constructor() {}
+  constructor(private service: ProjectsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.service.addingproject();
+    this.service.getProject();
+  }
   model: any = {};
   model2: any = {};
   addProject() {
