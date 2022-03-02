@@ -31,8 +31,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport{
                 .title("Sails Sotware - Tool Pot Application Swagger Configuration")
                 .description("\"Swagger configuration for Tool Pot Application \"")                                
                 .build();
-    }
-    
+    } 
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("swagger-ui.html")
