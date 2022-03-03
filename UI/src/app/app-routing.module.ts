@@ -33,11 +33,10 @@ const routes: Routes = [
     {path: "tools", component: ToolsComponent},
     {path: "privileges", component: PrivilegesComponent},
   ]},
-  {path: '', component: UserComponent},
-  {path: "project", component: UserProjectComponent, children: [
-  {path: "tool", component: ProjectToolsComponent}
+  {path: 'user', component: UserComponent},
+  {path: "projectid", component: UserProjectComponent, children: [
+  {path: ":toolid", component: ProjectToolsComponent}
   ]},
-  
   {path: 'not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/not-found'}
 ];

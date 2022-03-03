@@ -10,52 +10,47 @@ import { Post } from '../models/user-post.model';
   providedIn: 'root'
 })
 export class AdminDataService {
+  url = 'http://localhost:8080/project'
 
   projectList: Post[] = []
 
   constructor(private http: HttpClient) { }
 
+  // add project
   addProjects(projectData: Post){
-    this.http.post(constant.firebase+"projectData.json",projectData)
-    .subscribe(response=>{
-      console.log("success",response);
-    })
+    const options = {
+      headers: {
+        'Content-Type': "application/json"
+      }
+    }
+    return this.http
+      .post(this.url,projectData,options)
   }
 
+  // get projects
   getProjectDetails(){
-    return this.http.get<{[key:string]: Post}>(constant.firebase+"projectData.json")
-    .pipe(
-      map(
-        (data)=>{
-          const Parray: Post[] = []
-          for (const key in data){
-           if (data.hasOwnProperty(key)){
-             Parray.push({
-               id: key,
-               ...data[key]
-             })
-           }
-          }
-
-          return Parray;
-        }
-      )
-    )
-    
+    return this.http.get("http://localhost:8080/projects");
   }
 
-  updateProject(updateData: Post){
-    this.http.put(constant.firebase, updateData)
-    .subscribe(response=>{
-      console.log(response)
-    })
+  // update projects
+  updateProject(id:any,updateData: Post){
+    const data = {
+      ...updateData,
+      project_id:id
+    }
+    const options = {
+      headers: {
+        'Content-Type': "application/json"
+      }
+    }
+    console.log("update",data)
+    return this.http
+      .put(this.url,data,options)
   }
 
+  // delete projects
   deleteProject(i: any){
-    // console.log("delete",i)
-    this.http.delete(constant.firebase+"projectData/"+i+".json")
-    .subscribe(response=>{
-      console.log("deleted",response)
-    })
+    return this.http
+      .delete(this.url+`?projectid=${i}`)
   }
 }

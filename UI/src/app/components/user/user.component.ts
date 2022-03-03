@@ -18,7 +18,7 @@ export class UserComponent implements OnInit {
   }
 
   openProjects(){
-    this.route.navigate(['/project']);
+    this.route.navigate(['/projectList']);
     this.display = false;
   }
 

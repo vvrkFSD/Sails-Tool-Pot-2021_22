@@ -18,6 +18,8 @@ export class ForgotPasswordComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
   onChangePassword(){
     console.log(this.generatePswd.value)
     console.log(this.generatePswd.valid)

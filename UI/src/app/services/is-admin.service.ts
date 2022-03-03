@@ -8,4 +8,9 @@ export class IsAdminService {
   constructor() { }
 
   admin = true;
+  userDetails = {
+    Name: '',
+    Email: '',
+    Password: '',
+  }
 }

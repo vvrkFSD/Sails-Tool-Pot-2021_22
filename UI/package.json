@@ -25,6 +25,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "angular-datatables": "^13.0.1",
     "bootstrap": "^5.1.3",
+    "chart.js": "^3.7.1",
     "datatables.net": "^1.11.4",
     "datatables.net-dt": "^1.11.4",
     "jquery": "^3.6.0",
